@@ -16,3 +16,13 @@ class ClientesViewSet(viewsets.ModelViewSet):
     """Exibindo todos os clientes"""
     queryset = Cliente.objects.all()
     serializer_class = ClienteSerializer
+
+class ContratosViewSet(viewsets.ModelViewSet):
+    """Exibindo todos os contratos"""
+    queryset = Contrato.objects.all()
+    serializer_class = ContratoSerializer
+
+class NotasPromissoriasViewSet(viewsets.ModelViewSet):
+    """Exibindo todas as notas promissorias"""
+    queryset = NotaPromissoria.objects.all()
+    serializer_class = NotaPromissoriaSerializer
