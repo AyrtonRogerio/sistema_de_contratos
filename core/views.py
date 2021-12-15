@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.http import JsonResponse
 
-# Create your views here.
+def empresas(request):
+    if request.method == 'GET':
+        empresa = {'id':1,'nome':'Serra Bela','cnpj':12345678910112}
+        return JsonResponse(empresa)
