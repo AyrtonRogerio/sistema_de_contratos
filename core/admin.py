@@ -2,10 +2,16 @@ from django.contrib import admin
 from core.models import Empresa, Endereco, Cliente, Contrato, NotaPromissoria
 
 class Empresas(admin.ModelAdmin):
+    #List Display são as informacoes que disponibilizamos na API
     list_display = ('id','nome','cnpj')
+    #List Display Link sao informacoes para quando formos
+    # alterar uma informacao, na linha abaixo poderiamos alterar
+    # a empresa pelo id ou pelo nome
     list_display_links = ('id', 'nome')
+    #Search Field são os campos em que podemos fazer a busca da classe
     search_fields = ('nome', 'cnpj')
 
+#Aqui é onde registramos a configuração no admin do django
 admin.site.register(Empresa, Empresas)
 
 class Enderecos(admin.ModelAdmin):
