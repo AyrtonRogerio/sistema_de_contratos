@@ -1,11 +1,13 @@
 from django.db import models
 
+
 class Empresa(models.Model):
     nome = models.CharField(max_length=255)
     cnpj = models.CharField(max_length=14)
 
     def __str__(self):
         return self.nome
+
 
 class Endereco(models.Model):
 
@@ -20,6 +22,7 @@ class Endereco(models.Model):
     def __str__(self):
         return self.logradouro
 
+
 class Cliente(models.Model):
     nome = models.CharField(max_length=255)
     rg = models.CharField(max_length=9)
@@ -29,6 +32,7 @@ class Cliente(models.Model):
 
     def __str__(self):
         return self.nome
+
 
 class Contrato(models.Model):
     empresa_id = models.ForeignKey(Empresa, on_delete=models.CASCADE)
@@ -44,8 +48,7 @@ class Contrato(models.Model):
 class NotaPromissoria(models.Model):
     contrato_id = models.ForeignKey(Contrato, on_delete=models.CASCADE)
     valor = models.FloatField()
-    data_vencimento = models.DateField()
-    #Gambi por enquanto
+
     def __str__(self):
         self = 'salvo'
         return self
